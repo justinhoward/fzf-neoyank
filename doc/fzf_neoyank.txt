@@ -1,0 +1,39 @@
+*fzf_neoyank.txt* Browse and put neoyank history with FZF
+
+INTRODUCTION                                          *fzf-neoyank*
+
+Allows browsing and putting any register history saved with Neoyank.
+
+COMMANDS                                              *fzf-neoyank-commands*
+
+:FZFNeoyank [register] [command]                      *:FZFNeoyank*
+
+Opens an FZF pane with the contents of the default register. If an item is
+selected, it is put into the current buffer with the default command. A custom
+register can be specified by passing it as the first argument.
+
+>
+  " Look at history for the + buffer
+  :FZFNeoyank +
+<
+
+A custom command (p or P) can be specified with the second argument.
+
+>
+  " Use P to put before the cursor
+  :FZFNeoyank " P
+<
+
+OPTIONS                                               *fzf-neoyank-options*
+
+                                                      *g:fzf_neoyank_register*
+
+The default register to view with the |:FZFNeoyank| command.
+Default: `"`
+
+                                                      *g:fzf_neoyank_command*
+
+The default command to use when selecting an entry with |:FZFNeoyank|.
+Default: `p`
+
+  vim:tw=78:ts=8:ft=help:norl:
