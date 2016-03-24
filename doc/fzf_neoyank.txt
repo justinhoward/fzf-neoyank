@@ -36,4 +36,9 @@ Default: `"`
 The default command to use when selecting an entry with |:FZFNeoyank|.
 Default: `p`
 
+LICENSE                                               *fzf-neoyank-license*
+
+The software fzf-neoyank is licensed under the MIT license. See LICENSE.txt in
+the source repository.
+
   vim:tw=78:ts=8:ft=help:norl:
