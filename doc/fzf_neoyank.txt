@@ -11,18 +11,19 @@ COMMANDS                                              *fzf-neoyank-commands*
 Opens an FZF pane with the contents of the default register. If an item is
 selected, it is put into the current buffer with the default command. A custom
 register can be specified by passing it as the first argument.
-
 >
   " Look at history for the + buffer
   :FZFNeoyank +
 <
 
 A custom command (p or P) can be specified with the second argument.
-
 >
   " Use P to put before the cursor
   :FZFNeoyank " P
 <
+:FZFNeoyankSelection [register] [command]             *:FZFNeoyankSelection*
+
+Similar to the |:FZFNeoyank| command, but replaces the last visual selection.
 
 OPTIONS                                               *fzf-neoyank-options*
 
@@ -35,6 +36,21 @@ Default: `"`
 
 The default command to use when selecting an entry with |:FZFNeoyank|.
 Default: `p`
+
+KEY MAPPINGS                                          *fzf-neoyank-key-mappings*
+
+fzf-neoyank does not setup any key mappings by default. Some useful mappings
+might be:
+>
+  nnoremap <leader>y :FZFNeoyank<cr>
+  nnoremap <leader>Y :FZFNeoyank " P<cr>
+  vnoremap <leader>y :FZFNeoyankSelection<cr>
+
+These mappings sets up <leader>y to put from the default register. If you are in
+normal mode, it puts after the cursor. If you are in visual mode, it replaces
+the selection.
+
+It also sets up <leader>Y (uppercase) to put after the cursor in normal mode.
 
 LICENSE                                               *fzf-neoyank-license*
 
