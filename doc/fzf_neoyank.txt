@@ -4,6 +4,14 @@ INTRODUCTION                                          *fzf-neoyank*
 
 Allows browsing and putting any register history saved with Neoyank.
 
+USAGE                                                 *fzf-neoyank-usage*
+
+The |:FZFNeoyank| command opens an FZF pane with the history of the default
+register. Selecting an item from the list puts it into the current buffer.
+
+The |:FZFNeoyankSelection| command does the same thing, but replaces the visual
+selection.
+
 COMMANDS                                              *fzf-neoyank-commands*
 
 :FZFNeoyank [register] [command]                      *:FZFNeoyank*
@@ -46,7 +54,7 @@ might be:
   nnoremap <leader>Y :FZFNeoyank " P<cr>
   vnoremap <leader>y :FZFNeoyankSelection<cr>
 
-These mappings sets up <leader>y to put from the default register. If you are in
+These mappings set up <leader>y to put from the default register. If you are in
 normal mode, it puts after the cursor. If you are in visual mode, it replaces
 the selection.
 
