@@ -29,6 +29,7 @@ function! fzf_neoyank#run(selection, ...)
 endfunction
 
 function! s:get_history(register, command, selection)
+  call neoyank#update()
   let histories = neoyank#_get_yank_histories()
   let reg_history = get(histories, a:register, [])
   return map(
