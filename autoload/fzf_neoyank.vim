@@ -21,11 +21,10 @@ function! fzf_neoyank#run(selection, ...)
   let register = exists('a:1') ? a:1 : g:fzf_neoyank_register
   let command = exists('a:2') ? a:2 : g:fzf_neoyank_command
 
-  call fzf#run({
+  call fzf#run(fzf#wrap({
   \ 'source': s:get_history(register, command, a:selection),
-  \ 'down': '40%',
   \ 'options': '+m --delimiter="\t" --with-nth 4.. --tiebreak=index',
-  \ 'sink': function('s:history_sink') })
+  \ 'sink': function('s:history_sink') }))
 endfunction
 
 function! s:get_history(register, command, selection)
